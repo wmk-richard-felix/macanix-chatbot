@@ -1,0 +1,37 @@
+version: "2.0"
+
+stories:
+
+- story: problema com fumaca no capo
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: capo
+  - action: utter_capo
+
+- story: problema com fumaca nas rodas
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: rodas
+  - action: utter_rodas
+
+- story: problema com fumaca no escapamento
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: escapamento
+  - action: utter_escapamento
+
+- story: problema com barulhos
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: barulhos
+  - action: utter_barulhos

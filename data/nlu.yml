@@ -1,0 +1,142 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - Olá
+    - oi
+    - bom dia
+    - boa tarde
+    - boa noite
+    - Vamos lá
+    - eai
+    - bomdia
+    - boanoite
+    - boatarde
+
+- intent: goodbye
+  examples: |
+    - até mais
+    - tchau
+    - vejo você depois
+    - vejo vc depois
+    - boa noite
+    - tchau tchau
+    - tenha um bom dia
+
+- intent: affirm
+  examples: |
+    - sim
+    - s
+    - de fato
+    - com certeza
+    - isso mesmo
+    - correto
+    - uhum
+    - yes
+    - si
+
+- intent: deny
+  examples: |
+    - não
+    - n
+    - nunca
+    - eu acho que não
+    - não gosto disso
+    - sem chance
+    - na verdade não
+    - melhor não
+    - no
+    - not
+
+- intent: mood_great
+  examples: |
+    - perfeito
+    - ótimo
+    - maravilha
+    - maravilhoso
+    - Estou me sentindo muito bem
+    - Estou estou ótimo
+    - Eu sou incrível
+    - Eu vou salvar o mundo
+    - super feliz
+    - extremamente bom
+    - tão perfeito
+    - tão bom
+
+- intent: mood_unhappy
+  examples: |
+    - meu dia foi horrível
+    - Estou triste
+    - Não me sinto muito bem
+    - Estou desapontado
+    - super triste
+    - Eu estou tão triste
+    - triste
+    - muito triste
+    - infeliz
+    - não é bom
+    - não muito bom
+    - extremamente triste
+    - tão saad
+    - tão triste
+
+- intent: bot_challenge
+  examples: |
+    - você é um bot?
+    - você é um humano?
+    - eu estou falando com um bot?
+    - eu estou falando com um humano?
+
+- intent: voltar
+  examples: |
+    - voltar
+    - Voltar a pergunta anterior
+    - Para trás
+
+- intent: fumaca
+  examples: |
+    - vejo fumaça
+    - sinto fumaça
+    - fumaca
+
+- intent: capo
+  examples: |
+    - Capô
+    - capo
+
+- intent: rodas
+  examples: |
+    - Rodas
+    - rodas
+
+- intent: escapamento
+  examples: |
+    - Escapamento
+    - escapamento
+
+- intent: capo_fumaca_branca
+  examples: |
+    - capo fumaça branca
+    - Fumaça branca
+
+- intent: capo_fumaca_preta
+  examples: |
+    - capo fumaça preta
+    - Fumaça preta
+
+- intent: escapamento_fumaca_branca
+  examples: |
+    - escapamento fumaça branca
+    - Fumaça branca
+
+- intent: escapamento_fumaca_preta
+  examples: |
+    - escapamento fumaça preta
+    - Fumaça preta
+
+- intent: barulhos
+  examples: |
+    - Escuto barulhos
+    - há barulhos
+    - barulho

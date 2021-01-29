@@ -1,0 +1,98 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - fumaca
+  - capo
+  - rodas
+  - escapamento
+  - barulhos
+
+responses:
+  utter_greet:
+  - text: "Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema em seu carro :)"
+    buttons:
+    - title: "Ouço barulhos"
+      payload: "/barulhos"
+    - title: "Vejo fumaça"
+      payload: "/fumaca"
+    - title: "Vejo líquidos vazando do meu carro"
+      payload: "/liquidos"
+    - title: "Alguma luz no painel acendeu"
+      payload: "/luzes"
+    - title: "Meu carro não pega"
+      payload: "/carro_nao_pega"
+    - title: "Vejo fumaça"
+      payload: "/fumaca"
+
+  utter_fumaca:
+  - text: "De onde está sainda a fumaça?"
+    buttons:
+    - title: "Capô"
+      payload: "/capo"
+    - title: "Rodas"
+      payload: "/rodas"
+    - title: "Escapamento"
+      payload: "/escapamento"
+    - title: "Acho que não é esse o problema"
+      payload: "/voltar"
+
+  utter_capo:
+  - text: "Qual a cor da fumaça que está saindo do capô?"
+    buttons:
+    - title: "Fumaça branca"
+      payload: "/capo_fumaca_branca"
+    - title: "Fumaça preta"
+      payload: "/capo_fumaca_preta"
+
+  utter_rodas:
+  - text: "Você está em um terreno montanhoso onde precisa acionar muito seus freios?"
+    buttons:
+    - title: "Sim"
+      payload: "/affirm"
+    - title: "Não"
+      payload: "/deny"
+
+  utter_escapamento:
+  - text: "Qual a cor da fumaça que está saindo do seu escapamento?"
+    buttons:
+    - title: "Fumaça branca"
+      payload: "/escapamento_fumaca_branca"
+    - title: "Fumaça preta"
+      payload: "/escapamento_fumaca_preta"
+
+  utter_barulhos:
+  - text: "O barulho acontece quando?"
+    buttons:
+    - title: "Com o carro ligado mas parado"
+      payload: "/ligado_parado"
+    - title: "Com o carro ligado e em movimento"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Até logo!"
+
+  utter_iamabot:
+  - text: "Eu sou um bot, mas que está aqui para te ajudar."
+
+  utter_inicial:
+  - text: "Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema em seu carro :-)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
