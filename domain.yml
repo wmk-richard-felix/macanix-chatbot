@@ -1,98 +1,182 @@
 version: "2.0"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - fumaca
-  - capo
-  - rodas
-  - escapamento
-  - barulhos
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- fumaca
+- fumaca_capo
+- fumaca_capo_branca
+- fumaca_capo_preta
+- fumaca_rodas
+- fumaca_rodas_montanhoso
+- fumaca_rodas_freio
+- fumaca_escapamento
+- fumaca_escapamento_branca
+- fumaca_escapamento_preta
+- fumaca_escapamento_azul
 
 responses:
   utter_greet:
-  - text: "Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema em seu carro :)"
+  - text: Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema do
+      seu carro 😉 Selecione um dos sintomas abaixo para continuarmos 😎🔧
     buttons:
-    - title: "Ouço barulhos"
-      payload: "/barulhos"
-    - title: "Vejo fumaça"
-      payload: "/fumaca"
-    - title: "Vejo líquidos vazando do meu carro"
-      payload: "/liquidos"
-    - title: "Alguma luz no painel acendeu"
-      payload: "/luzes"
-    - title: "Meu carro não pega"
-      payload: "/carro_nao_pega"
-    - title: "Vejo fumaça"
-      payload: "/fumaca"
-
+    - title: Ouço barulhos
+      payload: /barulhos
+    - title: Vejo fumaça
+      payload: /fumaca
+    - title: Vejo líquidos vazando do meu carro
+      payload: /liquidos
+    - title: Alguma luz no painel acendeu
+      payload: /luzes
+    - title: Meu carro não liga
+      payload: /carro_nao_liga
+    - title: Meu carro está vibrando
+      payload: /vibrando
+  
   utter_fumaca:
-  - text: "De onde está sainda a fumaça?"
+  - text: De onde está sainda a fumaça?
     buttons:
-    - title: "Capô"
-      payload: "/capo"
-    - title: "Rodas"
-      payload: "/rodas"
-    - title: "Escapamento"
-      payload: "/escapamento"
-    - title: "Acho que não é esse o problema"
-      payload: "/voltar"
-
+    - title: Capô
+      payload: /fumaca_capo
+    - title: Rodas
+      payload: /fumaca_rodas
+    - title: Escapamento
+      payload: /fumaca_escapamento
+    - title: Acho que não é esse o problema
+      payload: /voltar
+  
   utter_capo:
-  - text: "Qual a cor da fumaça que está saindo do capô?"
+  - text: Qual a cor da fumaça que está saindo do capô?
     buttons:
-    - title: "Fumaça branca"
-      payload: "/capo_fumaca_branca"
-    - title: "Fumaça preta"
-      payload: "/capo_fumaca_preta"
-
+    - title: Fumaça branca
+      payload: /fumaca_capo_branca
+    - title: Fumaça preta
+      payload: /fumaca_capo_preta
+  
   utter_rodas:
-  - text: "Você está em um terreno montanhoso onde precisa acionar muito seus freios?"
+  - text: Você está em um terreno montanhoso onde precisa acionar muito seus freios?
     buttons:
-    - title: "Sim"
-      payload: "/affirm"
-    - title: "Não"
-      payload: "/deny"
-
+    - title: Sim
+      payload: /fumaca_rodas_montanhoso_sim
+    - title: Não
+      payload: /fumaca_rodas_montanhoso_nao
+  
   utter_escapamento:
-  - text: "Qual a cor da fumaça que está saindo do seu escapamento?"
+  - text: Qual a cor da fumaça que está saindo do seu escapamento?
     buttons:
-    - title: "Fumaça branca"
-      payload: "/escapamento_fumaca_branca"
-    - title: "Fumaça preta"
-      payload: "/escapamento_fumaca_preta"
-
+    - title: Fumaça branca
+      payload: /fumaca_escapamento_branca
+    - title: Fumaça preta
+      payload: /fumaca_escapamento_preta
+    - title: Fumaça azulada
+      payload: /fumaca_escapamento_azul
+  
   utter_barulhos:
-  - text: "O barulho acontece quando?"
+  - text: O barulho acontece quando?
     buttons:
-    - title: "Com o carro ligado mas parado"
-      payload: "/ligado_parado"
-    - title: "Com o carro ligado e em movimento"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+    - title: Com o carro ligado mas parado
+      payload: /ligado_parado
+    - title: Com o carro ligado e em movimento
+  
   utter_goodbye:
-  - text: "Até logo!"
-
+  - text: Até logo!
+  
   utter_iamabot:
-  - text: "Eu sou um bot, mas que está aqui para te ajudar."
-
+  - text: Eu sou um bot, mas que está aqui para te ajudar.
+  
   utter_inicial:
-  - text: "Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema em seu carro :-)"
+  - text: Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema em
+      seu carro :-)
+  
+  utter_results:
+  - text: Obrigado
+
+actions:
+- action_submit_results
+
+slots:
+  fumaca_capo:
+    type: any
+  fumaca_capo_branca:
+    type: any
+  fumaca_capo_preta:
+    type: any
+  # fumaca_rodas:
+  #   type: any
+  # fumaca_rodas_montanhoso:
+  #   type: any
+  # fumaca_rodas_montanhoso_sim:
+  #   type: any
+  # fumaca_rodas_montanhoso_nao:
+  #   type: any
+  # fumaca_rodas_freio:
+  #   type: any
+  # fumaca_escapamento:
+  #   type: any
+  # fumaca_escapamento_branca:
+  #   type: any
+  # fumaca_escapamento_preta:
+  #   type: any
+  # fumaca_escapamento_azul:
+  #   type: any
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+forms:
+  mecanix_form:
+    fumaca_capo:
+      - type: from_intent
+        intent: fumaca_capo
+        value: true
+    fumaca_capo_branca:
+      - type: from_intent
+        intent: fumaca_capo_branca
+        value: true
+        not_intent: excluded_intent
+    fumaca_capo_preta:
+      - type: from_intent
+        intent: fumaca_capo_preta
+        value: true
+        not_intent: excluded_intent
+    # fumaca_rodas:
+    #   - type: from_intent
+    #     intent: fumaca_rodas
+    #     value: true
+    # fumaca_rodas_montanhoso:
+    #   - type: from_intent
+    #     intent: fumaca_rodas_montanhoso
+    #     value: true
+    # fumaca_rodas_montanhoso_sim:
+    #   - type: from_intent
+    #     intent: fumaca_rodas_montanhoso
+    #     value: true
+    # fumaca_rodas_montanhoso_nao:
+    #   - type: from_intent
+    #     intent: fumaca_rodas_montanhoso
+    #     value: false
+    # fumaca_rodas_freio:
+    #   - type: from_intent
+    #     intent: fumaca_rodas_freio
+    #     value: true
+    # fumaca_escapamento:
+    #   - type: from_intent
+    #     intent: fumaca_escapamento
+    #     value: true
+    # fumaca_escapamento_branca:
+    #   - type: from_intent
+    #     intent: fumaca_escapamento_branca
+    #     value: true
+    # fumaca_escapamento_preta:
+    #   - type: from_intent
+    #     intent: fumaca_escapamento_preta
+    #     value: true
+    # fumaca_escapamento_azul:
+    #   - type: from_intent
+    #     intent: fumaca_escapamento_azul
+    #     value: true
+    

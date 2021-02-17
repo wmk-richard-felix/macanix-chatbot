@@ -2,6 +2,17 @@ version: "2.0"
 
 rules:
 
+- rule: Form fumaça
+  condition:
+  # Condition that form is active.
+  - active_loop: mecanix_form
+  steps:
+  - action: mecanix_form
+  - active_loop: null
+  # The action we want to run when the form is submitted.
+  - action: action_submit_results
+  - action: utter_results
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye

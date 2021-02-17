@@ -7,31 +7,30 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: fumaca
-  - action: utter_fumaca
-  - intent: capo
-  - action: utter_capo
+  - action: mecanix_form
+  - active_loop: mecanix_form
 
-- story: problema com fumaca nas rodas
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: fumaca
-  - action: utter_fumaca
-  - intent: rodas
-  - action: utter_rodas
+# - story: problema com fumaca nas rodas
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: fumaca
+#   - action: utter_fumaca
+#   - intent: fumaca_rodas
+#   - action: utter_rodas
 
-- story: problema com fumaca no escapamento
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: fumaca
-  - action: utter_fumaca
-  - intent: escapamento
-  - action: utter_escapamento
+# - story: problema com fumaca no escapamento
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: fumaca
+#   - action: utter_fumaca
+#   - intent: fumaca_escapamento
+#   - action: utter_escapamento
 
-- story: problema com barulhos
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: barulhos
-  - action: utter_barulhos
+# - story: problema com barulhos
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: barulhos
+#   - action: utter_barulhos

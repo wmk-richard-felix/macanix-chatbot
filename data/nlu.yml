@@ -49,38 +49,6 @@ nlu:
     - no
     - not
 
-- intent: mood_great
-  examples: |
-    - perfeito
-    - ótimo
-    - maravilha
-    - maravilhoso
-    - Estou me sentindo muito bem
-    - Estou estou ótimo
-    - Eu sou incrível
-    - Eu vou salvar o mundo
-    - super feliz
-    - extremamente bom
-    - tão perfeito
-    - tão bom
-
-- intent: mood_unhappy
-  examples: |
-    - meu dia foi horrível
-    - Estou triste
-    - Não me sinto muito bem
-    - Estou desapontado
-    - super triste
-    - Eu estou tão triste
-    - triste
-    - muito triste
-    - infeliz
-    - não é bom
-    - não muito bom
-    - extremamente triste
-    - tão saad
-    - tão triste
-
 - intent: bot_challenge
   examples: |
     - você é um bot?
@@ -99,44 +67,72 @@ nlu:
     - vejo fumaça
     - sinto fumaça
     - fumaca
+    - Fumaça
 
-- intent: capo
+- intent: fumaca_capo
   examples: |
     - Capô
     - capo
+    - fumaca_capo
 
-- intent: rodas
-  examples: |
-    - Rodas
-    - rodas
-
-- intent: escapamento
-  examples: |
-    - Escapamento
-    - escapamento
-
-- intent: capo_fumaca_branca
+- intent: fumaca_capo_branca
   examples: |
     - capo fumaça branca
     - Fumaça branca
+    - fumaca_capo_branca
 
-- intent: capo_fumaca_preta
+- intent: fumaca_capo_preta
   examples: |
     - capo fumaça preta
     - Fumaça preta
+    - fumaca_capo_preta
 
-- intent: escapamento_fumaca_branca
+- intent: fumaca_rodas
+  examples: |
+    - Rodas
+    - rodas
+    - fumaca_rodas
+
+- intent: fumaca_rodas_montanhoso
+  examples: |
+    - Montanha
+    - Em terreno montanhoso
+    - fumaca_rodas_montanhoso
+
+- intent: fumaca_rodas_montanhoso_sim
+  examples: |
+    - Sim
+    - sim
+    - fumaca_rodas_montanhoso_sim
+
+- intent: fumaca_rodas_montanhoso_nao
+  examples: |
+    - Não
+    - nao
+    - fumaca_rodas_montanhoso_nao
+
+- intent: fumaca_rodas_freio
+  examples: |
+    - Freio puxado
+    - freio de mão puxado
+    - freio
+    - freio de mão
+    - fumaca_rodas_freio
+
+- intent: fumaca_escapamento
+  examples: |
+    - Escapamento
+    - escapamento
+    - fumaca_escapamento
+
+- intent: fumaca_escapamento_branca
   examples: |
     - escapamento fumaça branca
     - Fumaça branca
+    - fumaca_escapamento_branca
 
-- intent: escapamento_fumaca_preta
+- intent: fumaca_escapamento_preta
   examples: |
     - escapamento fumaça preta
     - Fumaça preta
-
-- intent: barulhos
-  examples: |
-    - Escuto barulhos
-    - há barulhos
-    - barulho
+    - fumaca_capo_preta
