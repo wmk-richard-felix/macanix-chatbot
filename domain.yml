@@ -39,6 +39,24 @@ intents:
 - barulhos_rodas_constante
 - barulhos_rodas_intermitente
 
+#################
+# Líquidos
+#################
+- liquidos
+- liquido_colorido
+- liquido_amarelo
+- liquido_azul
+- liquido_verde
+- liquido_vermelho_rosa
+- liquido_laranja
+- liquido_escuro
+- liquido_marrom_claro
+- liquido_marrom_escuro
+- liquido_preto
+- liquido_incolor_inodoro
+- liquido_incolor
+- liquido_inodoro
+
 responses:
   utter_saudacao:
   - text: Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema do
@@ -49,7 +67,7 @@ responses:
     - title: Vejo fumaça
       payload: Vejo fumaça
     - title: Vejo líquidos vazando do meu carro
-      payload: Vejo líquidos vazando do meu carro
+      payload: Vejo líquidos vazando
     - title: Alguma luz no painel acendeu
       payload: Alguma luz no painel acendeu
     - title: Meu carro não liga
@@ -303,6 +321,91 @@ responses:
 
   utter_barulhos_movimento_marcha_nao:
   - text: Achamos que o problema pode ser o tal21! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  ###################
+  # Líquidos
+  ###################
+  utter_liquidos:
+  - text: Qual a aparência do líquido que está vazando?
+    buttons:
+    - title: Líquido colorido
+      payload: Líquido colorido
+    - title: Líquido escuro
+      payload: Líquido escuro
+    - title: Líquido incolor ou inodoro
+      payload: Líquido incolor ou inodoro
+
+  utter_liquido_colorido:
+  - text: Qual a cor do líquido que está vazando?
+    buttons:
+    - title: Líquido amarelo
+      payload: Líquido amarelo
+    - title: Líquido azul
+      payload: Líquido azul
+    - title: Líquido verde
+      payload: Líquido verde
+    - title: Líquido vermelho ou rosa
+      payload: Líquido vermelho ou rosa
+    - title: Líquido laranja
+      payload: Líquido laranja
+
+  utter_liquido_amarelo_resultado:
+  - text: Achamos que o problema pode ser o tal22! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+  
+  utter_liquido_azul_resultado:
+  - text: Achamos que o problema pode ser o tal23! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+  
+  utter_liquido_verde_resultado:
+  - text: Achamos que o problema pode ser o tal24! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_vermelho_resultado:
+  - text: Achamos que o problema pode ser o tal25! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_laranja_resultado:
+  - text: Achamos que o problema pode ser o tal26! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_escuro:
+  - text: Qual a cor do líquido que está vazando?
+    buttons:
+    - title: Líquido marrom claro
+      payload: Líquido marrom claro
+    - title: Líquido marrom escuro
+      payload: Líquido marrom escuro
+    - title: Líquido preto
+      payload: Líquido preto
+
+  utter_liquido_marrom_claro_resultado:
+  - text: Achamos que o problema pode ser o tal27! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_marrom_escuro_resultado:
+  - text: Achamos que o problema pode ser o tal28! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_preto_resultado:
+  - text: Achamos que o problema pode ser o tal29! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_incolor_inodoro:
+  - text: Como é o líquido que está vazando?
+    buttons:
+    - title: Líquido incolor
+      payload: Líquido incolor
+    - title: Líquido inodoro
+      payload: Líquido inodoro
+
+  utter_liquido_incolor_resultado:
+  - text: Achamos que o problema pode ser o tal30! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_liquido_inodoro_resultado:
+  - text: Achamos que o problema pode ser o tal31! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_despedida:

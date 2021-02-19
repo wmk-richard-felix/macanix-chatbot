@@ -321,3 +321,117 @@ stories:
   - action: utter_fumaca_escapamento
   - intent: fumaca_azul
   - action: utter_fumaca_escapamento_azul_resultado
+
+########################
+# Líquidos
+########################
+
+- story: Liquido amarelo
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_colorido
+  - action: utter_liquido_colorido
+  - intent: liquido_amarelo
+  - action: utter_liquido_amarelo_resultado
+
+- story: Liquido azul
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_colorido
+  - action: utter_liquido_colorido
+  - intent: liquido_azul
+  - action: utter_liquido_azul_resultado
+
+- story: Liquido verde
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_colorido
+  - action: utter_liquido_colorido
+  - intent: liquido_verde
+  - action: utter_liquido_verde_resultado
+
+- story: Liquido vermelho ou rosa
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_colorido
+  - action: utter_liquido_colorido
+  - intent: liquido_vermelho_rosa
+  - action: utter_liquido_vermelho_resultado
+
+- story: Liquido laranja
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_colorido
+  - action: utter_liquido_colorido
+  - intent: liquido_laranja
+  - action: utter_liquido_laranja_resultado
+
+- story: Liquido marrom claro
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_escuro
+  - action: utter_liquido_escuro
+  - intent: liquido_marrom_claro
+  - action: utter_liquido_marrom_claro_resultado
+
+- story: Liquido marrom escuro
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_escuro
+  - action: utter_liquido_escuro
+  - intent: liquido_marrom_escuro
+  - action: utter_liquido_marrom_escuro_resultado
+
+- story: Liquido preto
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_escuro
+  - action: utter_liquido_escuro
+  - intent: liquido_preto
+  - action: utter_liquido_preto_resultado
+
+- story: Liquido incolor
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_incolor_inodoro
+  - action: utter_liquido_incolor_inodoro
+  - intent: liquido_incolor
+  - action: utter_liquido_incolor_resultado
+
+- story: Liquido inodoro
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: liquidos
+  - action: utter_liquidos
+  - intent: liquido_incolor_inodoro
+  - action: utter_liquido_incolor_inodoro
+  - intent: liquido_inodoro
+  - action: utter_liquido_inodoro_resultado

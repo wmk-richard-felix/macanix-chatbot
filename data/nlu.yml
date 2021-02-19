@@ -176,3 +176,86 @@ nlu:
     - barulhos rodas intermitente
     - Intermitente
 
+###################
+# Líquidos
+###################
+
+- intent: liquidos
+  examples: |
+    - Vejo líquidos vazando
+    - Está vazando líquidos
+    - líquidos vazando
+
+- intent: liquido_colorido
+  examples: |
+    - Líquido colorido
+    - Vejo líquidos coloridos
+    - colorido
+
+- intent: liquido_amarelo
+  examples: |
+    - Líquido amarelo
+    - amarelo
+
+- intent: liquido_azul
+  examples: |
+    - Líquido azul
+    - azul
+
+- intent: liquido_verde
+  examples: |
+    - Líquido verde
+    - verde
+
+- intent: liquido_vermelho_rosa
+  examples: |
+    - Líquido vermelho ou rosa
+    - Líquido vermelho
+    - Líquido rosa
+    - liquido vermelho e rosa
+    - amarelo
+
+- intent: liquido_laranja
+  examples: |
+    - Líquido laranja
+    - laranja
+    - alaranjado
+    - Liquido laranja
+
+- intent: liquido_escuro
+  examples: |
+    - Líquido escuro
+    - escuro
+
+- intent: liquido_marrom_claro
+  examples: |
+    - Líquido marrom claro
+    - marrom claro
+
+- intent: liquido_marrom_escuro
+  examples: |
+    - Líquido marrom escuro
+    - marrom escuro
+
+- intent: liquido_preto
+  examples: |
+    - Líquido preto
+    - preto
+
+- intent: liquido_incolor_inodoro
+  examples: |
+    - Líquido incolor ou inodoro
+    - incolor ou inodoro
+
+- intent: liquido_incolor
+  examples: |
+    - Líquido incolor
+    - incolor
+
+- intent: liquido_inodoro
+  examples: |
+    - Líquido inodoro
+    - inodoro
+
+
+
