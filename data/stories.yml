@@ -2,35 +2,322 @@ version: "2.0"
 
 stories:
 
-- story: problema com fumaca no capo
+########################
+# Barulhos
+########################
+
+# Parado
+
+- story: Voltar Barulhos
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: voltar
+  - action: utter_voltar
+
+- story: Barulhos motor girando normalmente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_parado
+  - action: utter_barulhos_ligado_parado_partida
+  - intent: afirmacao
+  - action: utter_barulhos_ligado_parado_partida_motor
+  - intent: motor_girando_normal
+  - action: utter_barulhos_motor_normal_resultado
+
+- story: Barulhos motor girando lentamente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_parado
+  - action: utter_barulhos_ligado_parado_partida
+  - intent: afirmacao
+  - action: utter_barulhos_ligado_parado_partida_motor
+  - intent: motor_girando_lento
+  - action: utter_barulhos_motor_lento_resultado
+
+- story: Barulhos girando o volante
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_parado
+  - action: utter_barulhos_ligado_parado_partida
+  - intent: negacao
+  - action: utter_barulhos_volante
+  - intent: afirmacao
+  - action: utter_barulhos_volante_sim_resultado
+
+- story: Barulhos parado no engate da marcha sim
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_parado
+  - action: utter_barulhos_ligado_parado_partida
+  - intent: negacao
+  - action: utter_barulhos_volante
+  - intent: negacao
+  - action: utter_barulhos_ligado_parado_marcha
+  - intent: afirmacao
+  - action: utter_barulhos_parado_marcha_sim_resultado
+
+- story: Barulhos parado no engate da marcha não
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_parado
+  - action: utter_barulhos_ligado_parado_partida
+  - intent: negacao
+  - action: utter_barulhos_volante
+  - intent: negacao
+  - action: utter_barulhos_ligado_parado_marcha
+  - intent: negacao
+  - action: utter_barulhos_parado_marcha_nao_resultado
+
+## Movimento
+
+- story: Barulhos em movimento freio
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: afirmacao
+  - action: utter_barulhos_freios_sim
+
+- story: Barulhos em movimento rodas constante
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao
+  - action: utter_barulhos_rodas
+  - intent: afirmacao
+  - action: utter_barulhos_rodas_sim
+  - intent: barulhos_rodas_constante
+  - action: utter_barulhos_rodas_constante_resultado
+
+- story: Barulhos em movimento rodas intermitente lombadas
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao
+  - action: utter_barulhos_rodas
+  - intent: afirmacao
+  - action: utter_barulhos_rodas_sim
+  - intent: barulhos_rodas_intermitente
+  - action: utter_barulhos_rodas_lombada
+  - intent: afirmacao
+  - action: utter_barulho_rodas_lombada_sim_resultado
+
+- story: Barulhos em movimento rodas intermitente lombadas nao
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao 
+  - action: utter_barulhos_rodas
+  - intent: afirmacao
+  - action: utter_barulhos_rodas_sim
+  - intent: barulhos_rodas_intermitente
+  - action: utter_barulhos_rodas_lombada
+  - intent: negacao
+  - action: utter_barulhos_rodas_lombada_nao_resultado
+
+- story: Barulhos em movimento sem força
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao
+  - action: utter_barulhos_rodas
+  - intent: negacao
+  - action: utter_barulhos_sem_forca
+  - intent: afirmacao
+  - action: utter_barulhos_sem_forca_sim_resultado
+
+- story: Barulhos em movimento quando acelera
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao
+  - action: utter_barulhos_rodas
+  - intent: negacao
+  - action: utter_barulhos_sem_forca
+  - intent: negacao
+  - action: utter_barulhos_acelera
+  - intent: afirmacao
+  - action: utter_barulhos_acelera_sim_resultado
+
+- story: Barulhos em movimento quando engata a marcha
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao
+  - action: utter_barulhos_rodas
+  - intent: negacao
+  - action: utter_barulhos_sem_forca
+  - intent: negacao
+  - action: utter_barulhos_acelera
+  - intent: negacao
+  - action: utter_barulhos_movimento_marcha
+  - intent: afirmacao
+  - action: utter_barulhos_movimento_marcha_sim
+
+- story: Barulhos em movimento quando engata a marcha não
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: barulhos
+  - action: utter_barulhos
+  - intent: barulhos_ligado_em_movimento
+  - action: utter_barulhos_freio
+  - intent: negacao
+  - action: utter_barulhos_rodas
+  - intent: negacao
+  - action: utter_barulhos_sem_forca
+  - intent: negacao
+  - action: utter_barulhos_acelera
+  - intent: negacao
+  - action: utter_barulhos_movimento_marcha
+  - intent: negacao
+  - action: utter_barulhos_movimento_marcha_nao
+
+########################
+# Fumaça
+########################
+- story: Voltar Fumaça
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
   - intent: fumaca
-  - action: mecanix_form
-  - active_loop: mecanix_form
+  - action: utter_fumaca
+  - intent: voltar
+  - action: utter_voltar
 
-# - story: problema com fumaca nas rodas
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: fumaca
-#   - action: utter_fumaca
-#   - intent: fumaca_rodas
-#   - action: utter_rodas
+- story: problema com fumaca no capo branca
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_capo
+  - action: utter_fumaca_capo
+  - intent: fumaca_branca
+  - action: utter_fumaca_capo_branca_resultado
 
-# - story: problema com fumaca no escapamento
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: fumaca
-#   - action: utter_fumaca
-#   - intent: fumaca_escapamento
-#   - action: utter_escapamento
+- story: problema com fumaca no capo preta
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_capo
+  - action: utter_fumaca_capo
+  - intent: fumaca_preta
+  - action: utter_fumaca_capo_preta_resultado
 
-# - story: problema com barulhos
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: barulhos
-#   - action: utter_barulhos
+- story: problema com fumaca nas rodas terreno montanhoso
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_rodas
+  - action: utter_fumaca_rodas_montanhoso
+  - intent: afirmacao
+  - action: utter_fumaca_rodas_montanhoso_resultado
+
+- story: problema com fumaca nas rodas freio de mao sim
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_rodas
+  - action: utter_fumaca_rodas_montanhoso
+  - intent: negacao
+  - action: utter_fumaca_rodas_freio
+  - intent: afirmacao
+  - action: utter_fumaca_rodas_freio_sim_resultado
+
+- story: problema com fumaca nas rodas freio de mao não
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_rodas
+  - action: utter_fumaca_rodas_montanhoso
+  - intent: negacao
+  - action: utter_fumaca_rodas_freio
+  - intent: negacao
+  - action: utter_fumaca_rodas_freio_nao_resultado
+
+- story: problema com fumaca no escapamento branca
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_escapamento
+  - action: utter_fumaca_escapamento
+  - intent: fumaca_branca
+  - action: utter_fumaca_escapamento_branca_resultado
+
+- story: problema com fumaca no escapamento preta
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_escapamento
+  - action: utter_fumaca_escapamento
+  - intent: fumaca_preta
+  - action: utter_fumaca_escapamento_preta_resultado
+
+- story: problema com fumaca no escapamento azulada
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fumaca
+  - action: utter_fumaca
+  - intent: fumaca_escapamento
+  - action: utter_fumaca_escapamento
+  - intent: fumaca_azul
+  - action: utter_fumaca_escapamento_azul_resultado

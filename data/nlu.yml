@@ -1,7 +1,7 @@
 version: "2.0"
 
 nlu:
-- intent: greet
+- intent: saudacao
   examples: |
     - Olá
     - oi
@@ -13,8 +13,10 @@ nlu:
     - bomdia
     - boanoite
     - boatarde
+    - Ola
+    - e ai
 
-- intent: goodbye
+- intent: despedida
   examples: |
     - até mais
     - tchau
@@ -24,7 +26,7 @@ nlu:
     - tchau tchau
     - tenha um bom dia
 
-- intent: affirm
+- intent: afirmacao
   examples: |
     - sim
     - s
@@ -35,8 +37,12 @@ nlu:
     - uhum
     - yes
     - si
+    - SIM
+    - Sim
+    - verdade
+    - pode pá
 
-- intent: deny
+- intent: negacao
   examples: |
     - não
     - n
@@ -48,6 +54,9 @@ nlu:
     - melhor não
     - no
     - not
+    - NÃO
+    - Não
+    - nem é
 
 - intent: bot_challenge
   examples: |
@@ -55,84 +64,115 @@ nlu:
     - você é um humano?
     - eu estou falando com um bot?
     - eu estou falando com um humano?
+    - você está na nuvem?
 
 - intent: voltar
   examples: |
     - voltar
     - Voltar a pergunta anterior
     - Para trás
+    - anterior
 
+####################
+# Fumaça
+####################
 - intent: fumaca
   examples: |
     - vejo fumaça
     - sinto fumaça
     - fumaca
     - Fumaça
+    - Vejo fumaça
+    - Estou vendo fumaça
 
 - intent: fumaca_capo
   examples: |
     - Capô
     - capo
-    - fumaca_capo
-
-- intent: fumaca_capo_branca
-  examples: |
-    - capo fumaça branca
-    - Fumaça branca
-    - fumaca_capo_branca
-
-- intent: fumaca_capo_preta
-  examples: |
-    - capo fumaça preta
-    - Fumaça preta
-    - fumaca_capo_preta
+    - Fumaça no capô
+    - é no capô
+    - é no capo
 
 - intent: fumaca_rodas
   examples: |
     - Rodas
     - rodas
     - fumaca_rodas
-
-- intent: fumaca_rodas_montanhoso
-  examples: |
-    - Montanha
-    - Em terreno montanhoso
-    - fumaca_rodas_montanhoso
-
-- intent: fumaca_rodas_montanhoso_sim
-  examples: |
-    - Sim
-    - sim
-    - fumaca_rodas_montanhoso_sim
-
-- intent: fumaca_rodas_montanhoso_nao
-  examples: |
-    - Não
-    - nao
-    - fumaca_rodas_montanhoso_nao
-
-- intent: fumaca_rodas_freio
-  examples: |
-    - Freio puxado
-    - freio de mão puxado
-    - freio
-    - freio de mão
-    - fumaca_rodas_freio
+    - Fumaça nas rodas
 
 - intent: fumaca_escapamento
   examples: |
     - Escapamento
     - escapamento
     - fumaca_escapamento
+    - Fumaça_no_escapamento
+    - Fumaça no escapamento
+    - fumaca no escapamento
 
-- intent: fumaca_escapamento_branca
+- intent: fumaca_branca
   examples: |
-    - escapamento fumaça branca
+    - fumaça branca
     - Fumaça branca
-    - fumaca_escapamento_branca
+    - fumaca_branca
+    - fumaça branca
 
-- intent: fumaca_escapamento_preta
+- intent: fumaca_preta
   examples: |
-    - escapamento fumaça preta
+    - fumaça preta
     - Fumaça preta
-    - fumaca_capo_preta
+    - fumaca_preta
+    - fumaça Preta
+
+- intent: fumaca_azul
+  examples: |
+    - fumaça azul
+    - Fumaça azul
+    - fumaca_azul
+    - fumaça Azul
+
+##################
+# Barulhos
+##################
+
+- intent: barulhos
+  examples: |
+    - Ouço barulhos
+    - ouço barulhos
+    - Estou ouvindo barulhos
+
+- intent: barulhos_ligado_parado
+  examples: |
+    - barulhos_ligado_parado
+    - barulhos ligado parado
+    - Com ele parado
+    - Barulhos com o carro parado
+
+- intent: barulhos_ligado_em_movimento
+  examples: |
+    - barulhos_ligado_em_movimento
+    - barulhos ligado em movimento
+    - Com ele ligado e em movimento
+
+- intent: motor_girando_normal
+  examples: |
+    - Motor normal
+    - O motor está girando normalmente
+
+- intent: motor_girando_lento
+  examples: |
+    - barulhos_ligado_parado_partida_motor_lento
+    - barulhos ligado parado partida motor lento
+    - O motor está girando lentamente
+
+- intent: barulhos_rodas_constante
+  examples: |
+    - barulhos_rodas_constante
+    - barulhos rodas constante
+    - Constante
+
+- intent: barulhos_rodas_intermitente
+  examples: |
+    - barulhos_rodas_intermitente
+    - barulhos rodas intermitente
+    - Intermitente
+

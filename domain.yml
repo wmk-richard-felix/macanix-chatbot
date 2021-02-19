@@ -1,87 +1,311 @@
 version: "2.0"
 
 intents:
-- greet
-- goodbye
-- affirm
-- deny
+##################
+# Comuns
+##################
+- saudacao
+- despedida
+- afirmacao
+- negacao
+- voltar
 - bot_challenge
+
+##################
+# Compartilhados
+##################
+- motor_girando_normal
+- motor_girando_lento
+
+##################
+# Fumaça
+##################
 - fumaca
 - fumaca_capo
-- fumaca_capo_branca
-- fumaca_capo_preta
 - fumaca_rodas
-- fumaca_rodas_montanhoso
-- fumaca_rodas_freio
 - fumaca_escapamento
-- fumaca_escapamento_branca
-- fumaca_escapamento_preta
-- fumaca_escapamento_azul
+- fumaca_branca
+- fumaca_preta
+- fumaca_azul
+
+##################
+# Barulhos
+##################
+- barulhos
+- barulhos_ligado_parado
+- barulhos_ligado_em_movimento
+- barulhos_motor_normal
+- barulhos_motor_lento
+- barulhos_rodas_constante
+- barulhos_rodas_intermitente
 
 responses:
-  utter_greet:
+  utter_saudacao:
   - text: Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema do
       seu carro 😉 Selecione um dos sintomas abaixo para continuarmos 😎🔧
     buttons:
     - title: Ouço barulhos
-      payload: /barulhos
+      payload: Estou ouvindo barulhos
     - title: Vejo fumaça
-      payload: /fumaca
+      payload: Vejo fumaça
     - title: Vejo líquidos vazando do meu carro
-      payload: /liquidos
+      payload: Vejo líquidos vazando do meu carro
     - title: Alguma luz no painel acendeu
-      payload: /luzes
+      payload: Alguma luz no painel acendeu
     - title: Meu carro não liga
-      payload: /carro_nao_liga
+      payload: Meu carro não liga
     - title: Meu carro está vibrando
-      payload: /vibrando
-  
+      payload: Meu carro está vibrando
+
+  utter_voltar:
+  - text: Ok! Vamos tentar de novo 😉 Selecione um dos sintomas abaixo para continuarmos 😎🔧
+    buttons:
+    - title: Ouço barulhos
+      payload: Ouço barulhos
+    - title: Vejo fumaça
+      payload: Estou vendo fumaça
+    - title: Vejo líquidos vazando do meu carro
+      payload: Vejo líquidos vazando do meu carro
+    - title: Alguma luz no painel acendeu
+      payload: Alguma luz no painel acendeu
+    - title: Meu carro não liga
+      payload: Meu carro não liga
+    - title: Meu carro está vibrando
+      payload: Meu carro está vibrando
+
+  #################
+  # Fumaça
+  #################  
   utter_fumaca:
   - text: De onde está sainda a fumaça?
     buttons:
     - title: Capô
-      payload: /fumaca_capo
+      payload: Fumaça no capô
     - title: Rodas
-      payload: /fumaca_rodas
+      payload: Fumaça nas rodas
     - title: Escapamento
-      payload: /fumaca_escapamento
+      payload: Fumaça no escapamento
     - title: Acho que não é esse o problema
-      payload: /voltar
+      payload: voltar
   
-  utter_capo:
+  utter_fumaca_capo:
   - text: Qual a cor da fumaça que está saindo do capô?
     buttons:
     - title: Fumaça branca
-      payload: /fumaca_capo_branca
+      payload: Fumaça branca
     - title: Fumaça preta
-      payload: /fumaca_capo_preta
+      payload: Fumaça preta
+
+  utter_fumaca_capo_branca_resultado:
+  - text: Achamos que o problema pode ser o tal1! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
   
-  utter_rodas:
+  utter_fumaca_capo_preta_resultado:
+  - text: Achamos que o problema pode ser o tal2! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+  
+  utter_fumaca_rodas_montanhoso:
   - text: Você está em um terreno montanhoso onde precisa acionar muito seus freios?
     buttons:
     - title: Sim
-      payload: /fumaca_rodas_montanhoso_sim
+      payload: Sim
     - title: Não
-      payload: /fumaca_rodas_montanhoso_nao
+      payload: Não
   
-  utter_escapamento:
+  utter_fumaca_rodas_montanhoso_resultado:
+  - text: Achamos que o problema pode ser o tal3! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_fumaca_rodas_freio:
+  - text: Seu freio de mão estava acionado enquanto dirigia?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_fumaca_rodas_freio_sim_resultado:
+  - text: Achamos que o problema pode ser o tal4! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_fumaca_rodas_freio_nao_resultado:
+  - text: Achamos que o problema pode ser o tal5! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_fumaca_escapamento:
   - text: Qual a cor da fumaça que está saindo do seu escapamento?
     buttons:
     - title: Fumaça branca
-      payload: /fumaca_escapamento_branca
+      payload: Fumaça branca
     - title: Fumaça preta
-      payload: /fumaca_escapamento_preta
+      payload: Fumaça preta
     - title: Fumaça azulada
-      payload: /fumaca_escapamento_azul
+      payload: Fumaça azul
+
+  utter_fumaca_escapamento_branca_resultado:
+  - text: Achamos que o problema pode ser o tal6! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
   
+  utter_fumaca_escapamento_preta_resultado:
+  - text: Achamos que o problema pode ser o tal7! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_fumaca_escapamento_azul_resultado:
+  - text: Achamos que o problema pode ser o tal8! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  ##################
+  ## Barulhos
+  ##################
   utter_barulhos:
-  - text: O barulho acontece quando?
+  - text: O barulho acontece quando? 👂🏼
     buttons:
     - title: Com o carro ligado mas parado
-      payload: /ligado_parado
+      payload: Barulhos com o carro parado
     - title: Com o carro ligado e em movimento
+      payload: Com ele ligado e em movimento
+
+  utter_barulhos_ligado_parado_partida:
+  - text: O barulho acontece durante a partida?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_ligado_parado_partida_motor:
+  - text: Como está o barulho no motor nesse momento?
+    buttons:
+    - title: Motor girando normalmente
+      payload: O motor está girando lentamente
+    - title: Motor girando lentamente
+      payload: O motor está girando normalmente
+
+  utter_barulhos_motor_lento_resultado:
+  - text: Achamos que o problema pode ser o tal9! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
   
-  utter_goodbye:
+  utter_barulhos_motor_normal_resultado:
+  - text: Achamos que o problema pode ser o tal10! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_volante:
+  - text: O barulho acontece quando você gira o volante?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_volante_sim_resultado:
+  - text: Achamos que o problema pode ser o tal11! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_ligado_parado_marcha:
+  - text: O barulho acontece quando você engata a marcha?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_parado_marcha_sim_resultado:
+  - text: Achamos que o problema pode ser o tal12! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_parado_marcha_nao_resultado:
+  - text: Achamos que o problema pode ser o tal13! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_freio:
+  - text: O barulho acontece quando você pisa no freio?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_freios_sim:
+  - text: Achamos que o problema pode ser o tal14! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_rodas:
+  - text: O barulho está acontecendo nas rodas?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_rodas_sim:
+  - text: O barulho nas rodas acontece de qual forma?
+    buttons:
+    - title: Barulho constante
+      payload: Constante
+    - title: Barulho acontece de forma intermitente
+      payload: Intermitente
+
+  utter_barulhos_rodas_constante_resultado:
+  - text: Achamos que o problema pode ser o tal15! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_rodas_lombada:
+  - text: O acontece ao passar por lombadas?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Sim
+
+  utter_barulho_rodas_lombada_sim_resultado:
+  - text: Achamos que o problema pode ser o tal16! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_rodas_lombada_nao_resultado:
+  - text: Achamos que o problema pode ser o tal17! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+      
+  utter_barulhos_sem_forca:
+  - text: O carro está sem força?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_sem_forca_sim_resultado:
+  - text: Achamos que o problema pode ser o tal18! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_acelera:
+  - text: O barulho acontece quando você acelera?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_acelera_sim_resultado:
+  - text: Achamos que o problema pode ser o tal19! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_movimento_marcha:
+  - text: O barulho acontece quando engata a marcha?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_barulhos_movimento_marcha_sim:
+  - text: Achamos que o problema pode ser o tal20! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_barulhos_movimento_marcha_nao:
+  - text: Achamos que o problema pode ser o tal21! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_despedida:
   - text: Até logo!
   
   utter_iamabot:
@@ -94,89 +318,89 @@ responses:
   utter_results:
   - text: Obrigado
 
-actions:
-- action_submit_results
+# actions:
+# - action_submit_results
 
-slots:
-  fumaca_capo:
-    type: any
-  fumaca_capo_branca:
-    type: any
-  fumaca_capo_preta:
-    type: any
-  # fumaca_rodas:
-  #   type: any
-  # fumaca_rodas_montanhoso:
-  #   type: any
-  # fumaca_rodas_montanhoso_sim:
-  #   type: any
-  # fumaca_rodas_montanhoso_nao:
-  #   type: any
-  # fumaca_rodas_freio:
-  #   type: any
-  # fumaca_escapamento:
-  #   type: any
-  # fumaca_escapamento_branca:
-  #   type: any
-  # fumaca_escapamento_preta:
-  #   type: any
-  # fumaca_escapamento_azul:
-  #   type: any
+# slots:
+#   fumaca_capo:
+#     type: any
+#   fumaca_capo_branca:
+#     type: any
+#   fumaca_capo_preta:
+#     type: any
+#   fumaca_rodas:
+#     type: any
+#   fumaca_rodas_montanhoso:
+#     type: any
+#   fumaca_rodas_montanhoso_sim:
+#     type: any
+#   fumaca_rodas_montanhoso_nao:
+#     type: any
+#   fumaca_rodas_freio:
+#     type: any
+#   fumaca_escapamento:
+#     type: any
+#   fumaca_escapamento_branca:
+#     type: any
+#   fumaca_escapamento_preta:
+#     type: any
+#   fumaca_escapamento_azul:
+#     type: any
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 
-forms:
-  mecanix_form:
-    fumaca_capo:
-      - type: from_intent
-        intent: fumaca_capo
-        value: true
-    fumaca_capo_branca:
-      - type: from_intent
-        intent: fumaca_capo_branca
-        value: true
-        not_intent: excluded_intent
-    fumaca_capo_preta:
-      - type: from_intent
-        intent: fumaca_capo_preta
-        value: true
-        not_intent: excluded_intent
-    # fumaca_rodas:
-    #   - type: from_intent
-    #     intent: fumaca_rodas
-    #     value: true
-    # fumaca_rodas_montanhoso:
-    #   - type: from_intent
-    #     intent: fumaca_rodas_montanhoso
-    #     value: true
-    # fumaca_rodas_montanhoso_sim:
-    #   - type: from_intent
-    #     intent: fumaca_rodas_montanhoso
-    #     value: true
-    # fumaca_rodas_montanhoso_nao:
-    #   - type: from_intent
-    #     intent: fumaca_rodas_montanhoso
-    #     value: false
-    # fumaca_rodas_freio:
-    #   - type: from_intent
-    #     intent: fumaca_rodas_freio
-    #     value: true
-    # fumaca_escapamento:
-    #   - type: from_intent
-    #     intent: fumaca_escapamento
-    #     value: true
-    # fumaca_escapamento_branca:
-    #   - type: from_intent
-    #     intent: fumaca_escapamento_branca
-    #     value: true
-    # fumaca_escapamento_preta:
-    #   - type: from_intent
-    #     intent: fumaca_escapamento_preta
-    #     value: true
-    # fumaca_escapamento_azul:
-    #   - type: from_intent
-    #     intent: fumaca_escapamento_azul
-    #     value: true
+# forms:
+#   mecanix_form:
+#     fumaca_capo:
+#       - type: from_intent
+#         intent: fumaca_capo
+#         value: true
+#     fumaca_capo_branca:
+#       - type: from_intent
+#         intent: fumaca_capo_branca
+#         value: true
+#         not_intent: excluded_intent
+#     fumaca_capo_preta:
+#       - type: from_intent
+#         intent: fumaca_capo_preta
+#         value: true
+#         not_intent: excluded_intent
+#     fumaca_rodas:
+#       - type: from_intent
+#         intent: fumaca_rodas
+#         value: true
+#     fumaca_rodas_montanhoso:
+#       - type: from_intent
+#         intent: fumaca_rodas_montanhoso
+#         value: true
+#     fumaca_rodas_montanhoso_sim:
+#       - type: from_intent
+#         intent: fumaca_rodas_montanhoso
+#         value: true
+#     fumaca_rodas_montanhoso_nao:
+#       - type: from_intent
+#         intent: fumaca_rodas_montanhoso
+#         value: false
+#     fumaca_rodas_freio:
+#       - type: from_intent
+#         intent: fumaca_rodas_freio
+#         value: true
+#     fumaca_escapamento:
+#       - type: from_intent
+#         intent: fumaca_escapamento
+#         value: true
+#     fumaca_escapamento_branca:
+#       - type: from_intent
+#         intent: fumaca_escapamento_branca
+#         value: true
+#     fumaca_escapamento_preta:
+#       - type: from_intent
+#         intent: fumaca_escapamento_preta
+#         value: true
+#     fumaca_escapamento_azul:
+#       - type: from_intent
+#         intent: fumaca_escapamento_azul
+#         value: true
     
