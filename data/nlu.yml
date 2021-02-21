@@ -73,6 +73,13 @@ nlu:
     - Para trás
     - anterior
 
+- intent: outros
+  examples: |
+    - Outros
+    - outros
+    - outro
+    - Outra coisa
+
 ####################
 # Fumaça
 ####################
@@ -139,6 +146,7 @@ nlu:
     - Ouço barulhos
     - ouço barulhos
     - Estou ouvindo barulhos
+    - barulhos
 
 - intent: barulhos_ligado_parado
   examples: |
@@ -257,5 +265,67 @@ nlu:
     - Líquido inodoro
     - inodoro
 
+####################
+# Luzes
+####################
 
+- intent: luzes
+  examples: |
+    - Vejo luzes no painel
+    - luzes
+    - luzes no painel
+
+- intent: luz_combustivel
+  examples: |
+    - Luz de combustível
+    - combustível
+    - combustivel
+
+- intent: luz_freio_abs
+  examples: |
+    - Luz de freios ABS
+    - freio abs
+    - freio
+    - abs
+    - freios
+
+- intent: luz_radiador
+  examples: |
+    - Luz de temperatura do radiador
+    - temperatura de radiador
+    - temperatura
+    - radiador
+
+- intent: luz_motor
+  examples: |
+    - Luz de motor
+    - motor
+
+- intent: luz_airbag
+  examples: |
+    - Luz de airbag
+    - airbag
+
+- intent: luz_freio_estacionamento
+  examples: |
+    - Luz de freio de estacionamento
+    - freio de estacionamento
+    - estacionamento
+    - freio
+
+- intent: luz_bateria
+  examples: |
+    - Luz da bateria
+    - bateria
+
+- intent: luz_oleo
+  examples: |
+    - Luz de óleo do motor
+    - óleo do motor
+
+- intent: luz_revisao
+  examples: |
+    - Luz revisão preventiva
+    - revisão preventiva
+    - revisão
 

@@ -57,6 +57,20 @@ intents:
 - liquido_incolor
 - liquido_inodoro
 
+#################
+# Luzes
+#################
+- luzes
+- luz_combustivel
+- luz_freio_abs
+- luz_radiador
+- luz_motor
+- luz_airbag
+- luz_freio_estacionamento
+- luz_bateria
+- luz_oleo
+- luz_revisao
+
 responses:
   utter_saudacao:
   - text: Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema do
@@ -406,6 +420,104 @@ responses:
 
   utter_liquido_inodoro_resultado:
   - text: Achamos que o problema pode ser o tal31! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  #################
+  # Luzes
+  #################
+
+  utter_luzes:
+  - text: Qual luz que está acessa?
+    buttons:
+    - title: Luz de combustível
+      payload: Luz de combustível
+    - title: Luz de freios ABS
+      payload: Luz de freios ABS
+    - title: Luz de temperatura do radiador
+      payload: Luz de temperatura do radiador
+    - title: Outros
+      payload: Outros
+  
+  utter_carro_com_combustivel:
+  - text: O carro está com combustível?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+  
+  utter_luzes_combustivel_com_resultado:
+  - text: Achamos que o problema pode ser o tal32a! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_combustivel_sem_resultado:
+  - text: Achamos que o problema pode ser o tal32b! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_abs_resultado:
+  - text: Achamos que o problema pode ser o tal33! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_radiador_resultado:
+  - text: Achamos que o problema pode ser o tal34! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+  
+  utter_luzes_2:
+  - text: Qual luz que está acessa?
+    buttons:
+    - title: Luz de motor
+      payload: Luz de motor
+    - title: Luz de airbag
+      payload: Luz de airbag
+    - title: Luz de freio de estacionamento
+      payload: Luz de freio de estacionamento
+    - title: Outros
+      payload: Outros
+
+  utter_luzes_motor_resultado:
+  - text: Achamos que o problema pode ser o tal35! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_airbag_resultado:
+  - text: Achamos que o problema pode ser o tal36! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_freio_estacionamento_resultado:
+  - text: Achamos que o problema pode ser o tal37! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_3:
+  - text: Qual luz que está acessa?
+    buttons:
+    - title: Luz da bateria
+      payload: Luz da bateria
+    - title: Luz de óleo do motor
+      payload: Luz de óleo do motor
+    - title: Luz revisão preventiva
+      payload: Luz revisão preventiva
+
+  utter_carro_com_oleo:
+  - text: O carro está com nível de óleo adequado?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_luzes_bateria_resultado:
+  - text: Achamos que o problema pode ser o tal38! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_oleo_adequado_resultado:
+  - text: Achamos que o problema pode ser o tal39a! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+  
+  utter_luzes_oleo_nao_adequado_resultado:
+  - text: Achamos que o problema pode ser o tal39b! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_luzes_revisao_resultado:
+  - text: Achamos que o problema pode ser o tal40! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_despedida:

@@ -435,3 +435,140 @@ stories:
   - action: utter_liquido_incolor_inodoro
   - intent: liquido_inodoro
   - action: utter_liquido_inodoro_resultado
+
+##################
+# Luzes
+##################
+
+- story: Luz de combustivel com combustível
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: luz_combustivel
+  - action: utter_carro_com_combustivel
+  - intent: afirmacao
+  - action: utter_luzes_combustivel_com_resultado
+
+- story: Luz de combustivel sem combustível
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: luz_combustivel
+  - action: utter_carro_com_combustivel
+  - intent: negacao
+  - action: utter_luzes_combustivel_sem_resultado
+
+- story: Luz de freios ABS
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: luz_freio_abs
+  - action: utter_luzes_abs_resultado
+  
+- story: Luz de temperatura radiador
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: luz_radiador
+  - action: utter_luzes_radiador_resultado
+
+- story: Luz de motor
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: luz_motor
+  - action: utter_luzes_motor_resultado
+
+- story: Luz de airbag
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: luz_airbag
+  - action: utter_luzes_airbag_resultado
+
+- story: Luz de freio de estacionamento
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: luz_freio_estacionamento
+  - action: utter_luzes_freio_estacionamento_resultado
+
+- story: Luz de bateria
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: outros
+  - action: utter_luzes_3
+  - intent: luz_bateria
+  - action: utter_luzes_bateria_resultado
+
+- story: Luz de óleo de motor nivel adequado
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: outros
+  - action: utter_luzes_3
+  - intent: luz_oleo
+  - action: utter_carro_com_oleo
+  - intent: afirmacao
+  - action: utter_luzes_oleo_adequado_resultado
+
+- story: Luz de óleo de motor nivel não adequado
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: outros
+  - action: utter_luzes_3
+  - intent: luz_oleo
+  - action: utter_carro_com_oleo
+  - intent: negacao
+  - action: utter_luzes_oleo_nao_adequado_resultado
+
+- story: Luz de revisão
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: luzes
+  - action: utter_luzes
+  - intent: outros
+  - action: utter_luzes_2
+  - intent: outros
+  - action: utter_luzes_3
+  - intent: luz_revisao
+  - action: utter_luzes_revisao_resultado
+
+
+
+
