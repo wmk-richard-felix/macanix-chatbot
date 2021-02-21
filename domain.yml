@@ -10,6 +10,7 @@ intents:
 - negacao
 - voltar
 - bot_challenge
+- outros
 
 ##################
 # Compartilhados
@@ -70,6 +71,13 @@ intents:
 - luz_bateria
 - luz_oleo
 - luz_revisao
+
+##################
+# Carro não liga
+##################
+- carro_nao_liga
+- utiliza_chave
+- utiliza_botao
 
 responses:
   utter_saudacao:
@@ -465,7 +473,8 @@ responses:
   utter_luzes_2:
   - text: Qual luz que está acessa?
     buttons:
-    - title: Luz de motor
+    # - title: Luz de motor
+    - image: https://revista.socarrao.com.br/wp-content/uploads/2018/06/Injec%CC%A7a%CC%83o-Eletro%CC%82nica.png
       payload: Luz de motor
     - title: Luz de airbag
       payload: Luz de airbag
@@ -519,6 +528,88 @@ responses:
   utter_luzes_revisao_resultado:
   - text: Achamos que o problema pode ser o tal40! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
+
+  #######################
+  # Carro não liga
+  #######################
+
+  utter_nao_liga:
+  - text: O carro liga por botão ou por chave?
+    buttons:
+    - title: Utiliza chave
+      payload: Utiliza chave
+    - title: Utiliza botão
+      payload: Utiliza botão
+
+  utter_luzez_acendem:
+  - text: As luzes do painel acendem?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+  
+  utter_carro_nao_liga_luzes_nao_acendem_resultado:
+  - text: Achamos que o problema pode ser o tal41! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_trocou_combustivel:
+  - text: Você trocou o combustível de álcool para gasolina ou o contrário?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_troca_combustivel_resultado:
+  - text: Achamos que o problema pode ser o tal42! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_nao_liga_barulho:
+  - text: O carro faz algum barulho ao tentar ligar?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_nao_liga_motor_normal_resultado:
+  - text: Achamos que o problema pode ser o tal43! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_nao_liga_motor_lento_resultado:
+  - text: Achamos que o problema pode ser o tal44! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_chave_gira:
+  - text: A chave gira no contato?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_chave_reserva_funciona:
+  - text: A chave reserva funciona?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_chave_nao_gira_reserva_funciona_resultado:
+  - text: Achamos que o problema pode ser o tal45! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_chave_nao_gira_reserva_nao_funciona_resultado:
+  - text: Achamos que o problema pode ser o tal46! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  
+
+  #######################
+  # Outros
+  #######################
 
   utter_despedida:
   - text: Até logo!

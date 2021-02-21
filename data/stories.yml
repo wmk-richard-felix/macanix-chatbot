@@ -569,6 +569,162 @@ stories:
   - intent: luz_revisao
   - action: utter_luzes_revisao_resultado
 
+####################
+# Carro não liga
+####################
 
+- story: Carro não liga chave luzes não acendem
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_chave
+  - action: utter_luzez_acendem
+  - intent: negacao
+  - action: utter_carro_nao_liga_luzes_nao_acendem_resultado
 
+- story: Carro não liga chave chave reserva funciona
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_chave
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: negacao
+  - action: utter_chave_reserva_funciona
+  - intent: afirmacao
+  - action: utter_chave_nao_gira_reserva_funciona_resultado
 
+- story: Carro não liga chave chave reserva não funciona
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_chave
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: negacao
+  - action: utter_chave_reserva_funciona
+  - intent: negacao
+  - action: utter_chave_nao_gira_reserva_nao_funciona_resultado
+
+- story: Carro não liga chave trocou combustivel recentemente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_chave
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: afirmacao
+  - action: utter_trocou_combustivel
+  - intent: afirmacao
+  - action: utter_troca_combustivel_resultado
+
+- story: Carro não liga motor girando lentamente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_chave
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: afirmacao
+  - action: utter_trocou_combustivel
+  - intent: negacao
+  - action: utter_nao_liga_barulho
+  - intent: afirmacao
+  - action: utter_barulhos_ligado_parado_partida_motor
+  - intent: motor_girando_lento
+  - action: utter_nao_liga_motor_lento_resultado
+
+- story: Carro não liga chave motor girando normalmente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_chave
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: afirmacao
+  - action: utter_trocou_combustivel
+  - intent: negacao
+  - action: utter_nao_liga_barulho
+  - intent: afirmacao
+  - action: utter_barulhos_ligado_parado_partida_motor
+  - intent: motor_girando_normal
+  - action: utter_nao_liga_motor_normal_resultado
+
+- story: Carro não liga botão luzes não acendem
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_botao
+  - action: utter_luzez_acendem
+  - intent: negacao
+  - action: utter_carro_nao_liga_luzes_nao_acendem_resultado
+
+- story: Carro não liga botão trocou combustivel recentemente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_botao
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_trocou_combustivel
+  - intent: afirmacao
+  - action: utter_troca_combustivel_resultado
+
+- story: Carro não liga botão motor girando lentamente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_botao
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: afirmacao
+  - action: utter_trocou_combustivel
+  - intent: negacao
+  - action: utter_nao_liga_barulho
+  - intent: afirmacao
+  - action: utter_barulhos_ligado_parado_partida_motor
+  - intent: motor_girando_lento
+  - action: utter_nao_liga_motor_lento_resultado
+
+- story: Carro não liga botão motor girando normalmente
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: carro_nao_liga
+  - action: utter_nao_liga
+  - intent: utiliza_botao
+  - action: utter_luzez_acendem
+  - intent: afirmacao
+  - action: utter_chave_gira
+  - intent: afirmacao
+  - action: utter_trocou_combustivel
+  - intent: negacao
+  - action: utter_nao_liga_barulho
+  - intent: afirmacao
+  - action: utter_barulhos_ligado_parado_partida_motor
+  - intent: motor_girando_normal
+  - action: utter_nao_liga_motor_normal_resultado

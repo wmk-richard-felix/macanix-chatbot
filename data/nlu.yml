@@ -329,3 +329,25 @@ nlu:
     - revisão preventiva
     - revisão
 
+#######################
+# Carro não liga
+#######################
+
+- intent: carro_nao_liga
+  examples: |
+    - Meu carro não liga
+    - carro não liga
+    - não liga
+    - nao liga
+
+- intent: utiliza_botao
+  examples: |
+    - Utiliza botão
+    - botão
+    - botao
+
+- intent: utiliza_chave
+  examples: |
+    - Utiliza chave
+    - chave
+    - Chave
