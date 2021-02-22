@@ -1,19 +1,49 @@
-FROM rasa/rasa-sdk:2.3.1
+FROM python:3.6-slim as builder
+# if this installation process changes, the enterprise container needs to be
+# updated as well
+WORKDIR /build
+COPY . .
+RUN python setup.py sdist bdist_wheel
+RUN find dist -maxdepth 1 -mindepth 1 -name '*.tar.gz' -print0 | xargs -0 -I {} mv {} rasa.tar.gz
 
-COPY actions /app/actions
+FROM python:3.6-slim
 
-USER root
-RUN pip install --no-cache-dir -r /app/actions/requirements-actions.txt
+SHELL ["/bin/bash", "-c"]
 
-RUN mkdir -p /usr/src/app
+RUN apt-get update -qq && \
+  apt-get install -y --no-install-recommends \
+  build-essential \
+  wget \
+  openssh-client \
+  graphviz-dev \
+  pkg-config \
+  git-core \
+  openssl \
+  libssl-dev \
+  libffi6 \
+  libffi-dev \
+  libpng-dev \
+  libpq-dev \
+  curl && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  mkdir /install
 
-WORKDIR /usr/src/app
+WORKDIR /install
 
-COPY . /usr/src/app
+# Copy as early as possible so we can cache ...
+COPY requirements.txt .
 
-RUN rasa train --domain domain.yml --data data --out models
+RUN pip install -r requirements.txt --no-cache-dir
+
+COPY --from=builder /build/rasa.tar.gz .
+RUN pip install ./rasa.tar.gz[sql]
+
+VOLUME ["/app"]
+WORKDIR /app
 
 EXPOSE 5005
 
-USER 1001
-CMD ["run", "--enable-api" ]
+ENTRYPOINT ["rasa"]
+
+CMD ["--help"]
