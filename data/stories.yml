@@ -148,7 +148,7 @@ stories:
   - intent: negacao
   - action: utter_barulhos_rodas_lombada_nao_resultado
 
-- story: Barulhos em movimento sem força
+- story: Barulhos em movimento engasgando
   steps:
   - intent: saudacao
   - action: utter_saudacao
@@ -159,9 +159,9 @@ stories:
   - intent: negacao
   - action: utter_barulhos_rodas
   - intent: negacao
-  - action: utter_barulhos_sem_forca
+  - action: utter_barulhos_engasgando
   - intent: afirmacao
-  - action: utter_barulhos_sem_forca_sim_resultado
+  - action: utter_barulhos_engasgando_sim_resultado
 
 - story: Barulhos em movimento quando acelera
   steps:
@@ -174,7 +174,7 @@ stories:
   - intent: negacao
   - action: utter_barulhos_rodas
   - intent: negacao
-  - action: utter_barulhos_sem_forca
+  - action: utter_barulhos_engasgando
   - intent: negacao
   - action: utter_barulhos_acelera
   - intent: afirmacao
@@ -191,7 +191,7 @@ stories:
   - intent: negacao
   - action: utter_barulhos_rodas
   - intent: negacao
-  - action: utter_barulhos_sem_forca
+  - action: utter_barulhos_engasgando
   - intent: negacao
   - action: utter_barulhos_acelera
   - intent: negacao
@@ -210,7 +210,7 @@ stories:
   - intent: negacao
   - action: utter_barulhos_rodas
   - intent: negacao
-  - action: utter_barulhos_sem_forca
+  - action: utter_barulhos_engasgando
   - intent: negacao
   - action: utter_barulhos_acelera
   - intent: negacao
@@ -335,7 +335,7 @@ stories:
   - intent: liquido_colorido
   - action: utter_liquido_colorido
   - intent: liquido_amarelo
-  - action: utter_liquido_amarelo_resultado
+  - action: utter_liquido_radiador_freio_resultado
 
 - story: Liquido azul
   steps:
@@ -346,7 +346,7 @@ stories:
   - intent: liquido_colorido
   - action: utter_liquido_colorido
   - intent: liquido_azul
-  - action: utter_liquido_azul_resultado
+  - action: utter_liquido_radiador_freio_resultado
 
 - story: Liquido verde
   steps:
@@ -357,7 +357,7 @@ stories:
   - intent: liquido_colorido
   - action: utter_liquido_colorido
   - intent: liquido_verde
-  - action: utter_liquido_verde_resultado
+  - action: utter_liquido_radiador_freio_resultado
 
 - story: Liquido vermelho ou rosa
   steps:
@@ -368,7 +368,7 @@ stories:
   - intent: liquido_colorido
   - action: utter_liquido_colorido
   - intent: liquido_vermelho_rosa
-  - action: utter_liquido_vermelho_resultado
+  - action: utter_liquido_radiador_freio_resultado
 
 - story: Liquido laranja
   steps:
@@ -379,7 +379,7 @@ stories:
   - intent: liquido_colorido
   - action: utter_liquido_colorido
   - intent: liquido_laranja
-  - action: utter_liquido_laranja_resultado
+  - action: utter_liquido_radiador_resultado
 
 - story: Liquido marrom claro
   steps:
@@ -445,8 +445,9 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: luz_combustivel
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: afirmacao
   - action: utter_carro_com_combustivel
   - intent: afirmacao
   - action: utter_luzes_combustivel_com_resultado
@@ -456,8 +457,9 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: luz_combustivel
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: afirmacao
   - action: utter_carro_com_combustivel
   - intent: negacao
   - action: utter_luzes_combustivel_sem_resultado
@@ -467,8 +469,12 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: luz_freio_abs
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_abs_resultado
   
 - story: Luz de temperatura radiador
@@ -476,8 +482,15 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: luz_radiador
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_radiador_resultado
 
 - story: Luz de motor
@@ -485,10 +498,18 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: luz_motor
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_motor_resultado
 
 - story: Luz de airbag
@@ -496,10 +517,21 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: luz_airbag
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: negacao
+  - action: utter_airbag_imagem
+  - action: utter_airbag_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_airbag_resultado
 
 - story: Luz de freio de estacionamento
@@ -507,10 +539,24 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: luz_freio_estacionamento
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: negacao
+  - action: utter_airbag_imagem
+  - action: utter_airbag_confirmacao
+  - intent: negacao
+  - action: utter_freio_estacionamento_imagem
+  - action: utter_freio_estacionamento_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_freio_estacionamento_resultado
 
 - story: Luz de bateria
@@ -518,12 +564,27 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: outros
-  - action: utter_luzes_3
-  - intent: luz_bateria
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: negacao
+  - action: utter_airbag_imagem
+  - action: utter_airbag_confirmacao
+  - intent: negacao
+  - action: utter_freio_estacionamento_imagem
+  - action: utter_freio_estacionamento_confirmacao
+  - intent: negacao
+  - action: utter_bateria_imagem
+  - action: utter_bateria_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_bateria_resultado
 
 - story: Luz de óleo de motor nivel adequado
@@ -531,12 +592,30 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: outros
-  - action: utter_luzes_3
-  - intent: luz_oleo
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: negacao
+  - action: utter_airbag_imagem
+  - action: utter_airbag_confirmacao
+  - intent: negacao
+  - action: utter_freio_estacionamento_imagem
+  - action: utter_freio_estacionamento_confirmacao
+  - intent: negacao
+  - action: utter_bateria_imagem
+  - action: utter_bateria_confirmacao
+  - intent: negacao
+  - action: utter_oleo_imagem
+  - action: utter_oleo_confirmacao
+  - intent: afirmacao
   - action: utter_carro_com_oleo
   - intent: afirmacao
   - action: utter_luzes_oleo_adequado_resultado
@@ -546,12 +625,30 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: outros
-  - action: utter_luzes_3
-  - intent: luz_oleo
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: negacao
+  - action: utter_airbag_imagem
+  - action: utter_airbag_confirmacao
+  - intent: negacao
+  - action: utter_freio_estacionamento_imagem
+  - action: utter_freio_estacionamento_confirmacao
+  - intent: negacao
+  - action: utter_bateria_imagem
+  - action: utter_bateria_confirmacao
+  - intent: negacao
+  - action: utter_oleo_imagem
+  - action: utter_oleo_confirmacao
+  - intent: afirmacao
   - action: utter_carro_com_oleo
   - intent: negacao
   - action: utter_luzes_oleo_nao_adequado_resultado
@@ -561,12 +658,33 @@ stories:
   - intent: saudacao
   - action: utter_saudacao
   - intent: luzes
-  - action: utter_luzes
-  - intent: outros
-  - action: utter_luzes_2
-  - intent: outros
-  - action: utter_luzes_3
-  - intent: luz_revisao
+  - action: utter_luzes_combustivel_imagem
+  - action: utter_luzes_combustivel_confirmacao
+  - intent: negacao
+  - action: utter_freios_abs_imagem
+  - action: utter_luzes_abs_confirmacao
+  - intent: negacao
+  - action: utter_radiador_imagem
+  - action: utter_radiador_confirmacao
+  - intent: negacao
+  - action: utter_motor_imagem
+  - action: utter_motor_confirmacao
+  - intent: negacao
+  - action: utter_airbag_imagem
+  - action: utter_airbag_confirmacao
+  - intent: negacao
+  - action: utter_freio_estacionamento_imagem
+  - action: utter_freio_estacionamento_confirmacao
+  - intent: negacao
+  - action: utter_bateria_imagem
+  - action: utter_bateria_confirmacao
+  - intent: negacao
+  - action: utter_oleo_imagem
+  - action: utter_oleo_confirmacao
+  - intent: negacao
+  - action: utter_revisao_imagem
+  - action: utter_revisao_confirmacao
+  - intent: afirmacao
   - action: utter_luzes_revisao_resultado
 
 ####################
@@ -728,3 +846,71 @@ stories:
   - action: utter_barulhos_ligado_parado_partida_motor
   - intent: motor_girando_normal
   - action: utter_nao_liga_motor_normal_resultado
+
+####################
+# Vibrando
+####################
+
+- story: Carro vibrando parado e em movimento
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: vibrando
+  - action: utter_vibrando
+  - intent: vibrando_parado_e_movimento
+  - action: utter_vibrando_parado_movimento_resultado
+
+- story: Carro vibrando movimento ao pisar no freio
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: vibrando
+  - action: utter_vibrando
+  - intent: vibrando_somente_movimento
+  - action: utter_somente_movimento_freio
+  - intent: afirmacao
+  - action: utter_vibrando_freio_resultado
+
+- story: Carro vibrando movimento velocidade maiores
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: vibrando
+  - action: utter_vibrando
+  - intent: vibrando_somente_movimento
+  - action: utter_somente_movimento_freio
+  - intent: negacao
+  - action: utter_vibrando_velocidades_maiores
+  - intent: afirmacao
+  - action: utter_vibrando_velocidades_maiores_sim_resultado
+
+- story: Carro vibrando em velocidades menores
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: vibrando
+  - action: utter_vibrando
+  - intent: vibrando_somente_movimento
+  - action: utter_somente_movimento_freio
+  - intent: negacao
+  - action: utter_vibrando_velocidades_maiores
+  - intent: negacao
+  - action: utter_vibrando_velocidade_maiores_nao
+  - intent: vibrando_devagar
+  - action: utter_vibrando_velocidade_30_resultado
+
+- story: Carro vibrando em velocidades maiores
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: vibrando
+  - action: utter_vibrando
+  - intent: vibrando_somente_movimento
+  - action: utter_somente_movimento_freio
+  - intent: negacao
+  - action: utter_vibrando_velocidades_maiores
+  - intent: negacao
+  - action: utter_vibrando_velocidade_maiores_nao
+  - intent: vibrando_rapido
+  - action: utter_vibrando_velocidade_acima_30_resultado
+

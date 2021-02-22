@@ -79,6 +79,15 @@ intents:
 - utiliza_chave
 - utiliza_botao
 
+##################
+# Vibrando
+##################
+- vibrando
+- vibrando_parado_e_movimento
+- vibrando_somente_movimento
+- vibrando_devagar
+- vibrando_rapido
+
 responses:
   utter_saudacao:
   - text: Olá, sou o robô mecânico! Irei te ajudar hoje a descobrir o problema do
@@ -94,7 +103,7 @@ responses:
       payload: Alguma luz no painel acendeu
     - title: Meu carro não liga
       payload: Meu carro não liga
-    - title: Meu carro está vibrando
+    - title: Meu carro está vibrando (tremendo)
       payload: Meu carro está vibrando
 
   utter_voltar:
@@ -137,11 +146,11 @@ responses:
       payload: Fumaça preta
 
   utter_fumaca_capo_branca_resultado:
-  - text: Achamos que o problema pode ser o tal1! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser  Falha no sistema de arrefecimento! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
   
   utter_fumaca_capo_preta_resultado:
-  - text: Achamos que o problema pode ser o tal2! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no motor! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
   
   utter_fumaca_rodas_montanhoso:
@@ -153,8 +162,8 @@ responses:
       payload: Não
   
   utter_fumaca_rodas_montanhoso_resultado:
-  - text: Achamos que o problema pode ser o tal3! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Aquecimento do freio! Aguarde o resfriamento dos componentes 
+      e siga dirigindo com cautela até um mecânico mais próximo. Evite jogar água nos discos para não estragá-lo 😉
 
   utter_fumaca_rodas_freio:
   - text: Seu freio de mão estava acionado enquanto dirigia?
@@ -165,11 +174,11 @@ responses:
       payload: Não
 
   utter_fumaca_rodas_freio_sim_resultado:
-  - text: Achamos que o problema pode ser o tal4! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Aquecimento do freio! Aguarde o resfriamento dos componentes 
+      e siga dirigindo com cautela até um mecânico mais próximo. Evite jogar água nos discos para não estragá-lo 😉
 
   utter_fumaca_rodas_freio_nao_resultado:
-  - text: Achamos que o problema pode ser o tal5! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Excesso de atrito nos freios! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_fumaca_escapamento:
@@ -183,16 +192,16 @@ responses:
       payload: Fumaça azul
 
   utter_fumaca_escapamento_branca_resultado:
-  - text: Achamos que o problema pode ser o tal6! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no motor! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
   
   utter_fumaca_escapamento_preta_resultado:
-  - text: Achamos que o problema pode ser o tal7! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Falha na queima de combustível / Fuligem no escampamento! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   utter_fumaca_escapamento_azul_resultado:
-  - text: Achamos que o problema pode ser o tal8! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser que você precise de uma Revisão urgente do motor! Clique 
+      nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   ##################
   ## Barulhos
@@ -222,11 +231,11 @@ responses:
       payload: O motor está girando normalmente
 
   utter_barulhos_motor_lento_resultado:
-  - text: Achamos que o problema pode ser o tal9! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na bateria! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
   
   utter_barulhos_motor_normal_resultado:
-  - text: Achamos que o problema pode ser o tal10! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Revisão das correias / Cabeçotes ou bronzinas! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_barulhos_volante:
@@ -238,7 +247,7 @@ responses:
       payload: Não
 
   utter_barulhos_volante_sim_resultado:
-  - text: Achamos que o problema pode ser o tal11! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na direção hidráulica! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_barulhos_ligado_parado_marcha:
@@ -250,12 +259,13 @@ responses:
       payload: Não
 
   utter_barulhos_parado_marcha_sim_resultado:
-  - text: Achamos que o problema pode ser o tal12! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Falha nos componentes da transmissão / câmbio ou Pedal / embreagem! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   utter_barulhos_parado_marcha_nao_resultado:
-  - text: Achamos que o problema pode ser o tal13! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Infelizmente com essas informações não consegui identificar o seu problema. Sugiro que leve seu veículo 
+      para realizar uma revisão e assim saber o problema! Clique nesse aqui [link](https://wemakecodes.com) para buscar 
+      profissionais especializados 😉🔧
 
   utter_barulhos_freio:
   - text: O barulho acontece quando você pisa no freio?
@@ -266,7 +276,7 @@ responses:
       payload: Não
 
   utter_barulhos_freios_sim:
-  - text: Achamos que o problema pode ser o tal14! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no Sistema de freio! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_barulhos_rodas:
@@ -286,8 +296,8 @@ responses:
       payload: Intermitente
 
   utter_barulhos_rodas_constante_resultado:
-  - text: Achamos que o problema pode ser o tal15! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser seus Pneus / rolamentos danificados! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   utter_barulhos_rodas_lombada:
   - text: O acontece ao passar por lombadas?
@@ -298,23 +308,23 @@ responses:
       payload: Sim
 
   utter_barulho_rodas_lombada_sim_resultado:
-  - text: Achamos que o problema pode ser o tal16! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Componentes da suspensão / Junta homocinética! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_barulhos_rodas_lombada_nao_resultado:
-  - text: Achamos que o problema pode ser o tal17! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no encaixe das rodas! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
       
-  utter_barulhos_sem_forca:
-  - text: O carro está sem força?
+  utter_barulhos_engasgando:
+  - text: O carro está engasgando?
     buttons:
     - title: Sim
       payload: Sim
     - title: Não
       payload: Não
 
-  utter_barulhos_sem_forca_sim_resultado:
-  - text: Achamos que o problema pode ser o tal18! Clique nesse aqui [link](https://wemakecodes.com) 
+  utter_barulhos_engasgando_sim_resultado:
+  - text: Achamos que o problema pode ser Falha na queima de combustível! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_barulhos_acelera:
@@ -326,7 +336,7 @@ responses:
       payload: Não
 
   utter_barulhos_acelera_sim_resultado:
-  - text: Achamos que o problema pode ser o tal19! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na direção hidráulica / Correia auxiliar! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_barulhos_movimento_marcha:
@@ -338,12 +348,13 @@ responses:
       payload: Não
 
   utter_barulhos_movimento_marcha_sim:
-  - text: Achamos que o problema pode ser o tal20! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Falha nos componentes da transmissão / câmbio ou Pedal / embreagem! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   utter_barulhos_movimento_marcha_nao:
-  - text: Achamos que o problema pode ser o tal21! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Infelizmente com essas informações não consegui identificar o seu problema. Sugiro que leve seu veículo 
+      para realizar uma revisão e assim saber o problema! Clique nesse aqui [link](https://wemakecodes.com) para buscar 
+      profissionais especializados 😉🔧
 
   ###################
   # Líquidos
@@ -372,24 +383,12 @@ responses:
     - title: Líquido laranja
       payload: Líquido laranja
 
-  utter_liquido_amarelo_resultado:
-  - text: Achamos que o problema pode ser o tal22! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
-  
-  utter_liquido_azul_resultado:
-  - text: Achamos que o problema pode ser o tal23! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
-  
-  utter_liquido_verde_resultado:
-  - text: Achamos que o problema pode ser o tal24! Clique nesse aqui [link](https://wemakecodes.com) 
+  utter_liquido_radiador_freio_resultado:
+  - text: Achamos que o problema pode ser Vazamento do líquido do radiador / fluído de freio! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
-  utter_liquido_vermelho_resultado:
-  - text: Achamos que o problema pode ser o tal25! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
-
-  utter_liquido_laranja_resultado:
-  - text: Achamos que o problema pode ser o tal26! Clique nesse aqui [link](https://wemakecodes.com) 
+  utter_liquido_radiador_resultado:
+  - text: Achamos que o problema pode ser Vazamento do líquido do radiador! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_liquido_escuro:
@@ -403,15 +402,15 @@ responses:
       payload: Líquido preto
 
   utter_liquido_marrom_claro_resultado:
-  - text: Achamos que o problema pode ser o tal27! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Vazamento do fluido de freio / transmissão / direção hidráulica! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_liquido_marrom_escuro_resultado:
-  - text: Achamos que o problema pode ser o tal28! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Vazamento do fluido de freio / óleo do motor! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_liquido_preto_resultado:
-  - text: Achamos que o problema pode ser o tal29! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Vazamento de óleo do motor! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_liquido_incolor_inodoro:
@@ -423,29 +422,29 @@ responses:
       payload: Líquido inodoro
 
   utter_liquido_incolor_resultado:
-  - text: Achamos que o problema pode ser o tal30! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Vazamento de Combustível! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_liquido_inodoro_resultado:
-  - text: Achamos que o problema pode ser o tal31! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Pode ser água mesmo! Mas caso queira verificar melhor, 
+      clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   #################
   # Luzes
   #################
 
-  utter_luzes:
-  - text: Qual luz que está acessa?
-    buttons:
-    - title: Luz de combustível
-      payload: Luz de combustível
-    - title: Luz de freios ABS
-      payload: Luz de freios ABS
-    - title: Luz de temperatura do radiador
-      payload: Luz de temperatura do radiador
-    - title: Outros
-      payload: Outros
+  utter_luzes_combustivel_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/combustivel.jpg
   
+  utter_luzes_combustivel_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
   utter_carro_com_combustivel:
   - text: O carro está com combustível?
     buttons:
@@ -453,57 +452,121 @@ responses:
       payload: Sim
     - title: Não
       payload: Não
-  
+
   utter_luzes_combustivel_com_resultado:
-  - text: Achamos que o problema pode ser o tal32a! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Sistema de partida a frio / Detecção de combustível! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
 
   utter_luzes_combustivel_sem_resultado:
-  - text: Achamos que o problema pode ser o tal32b! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema é o carro estar sem combustível! Sugiro que corra para um posto 😉
+  
+  utter_freios_abs_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/abs.png
+  
+  utter_luzes_abs_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
 
   utter_luzes_abs_resultado:
-  - text: Achamos que o problema pode ser o tal33! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no ABS! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
+
+  utter_radiador_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/radiador.png
+  
+  utter_radiador_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
 
   utter_luzes_radiador_resultado:
-  - text: Achamos que o problema pode ser o tal34! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Falha no Sistemas de ventilação / Nível do líquido do radiador! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
   
-  utter_luzes_2:
-  - text: Qual luz que está acessa?
+  utter_motor_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/motor.png
+  
+  utter_motor_confirmacao:
+  - text: ""
     buttons:
-    # - title: Luz de motor
-    - image: https://revista.socarrao.com.br/wp-content/uploads/2018/06/Injec%CC%A7a%CC%83o-Eletro%CC%82nica.png
-      payload: Luz de motor
-    - title: Luz de airbag
-      payload: Luz de airbag
-    - title: Luz de freio de estacionamento
-      payload: Luz de freio de estacionamento
-    - title: Outros
-      payload: Outros
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
 
   utter_luzes_motor_resultado:
-  - text: Achamos que o problema pode ser o tal35! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na injeção eletrônica! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
+
+  utter_airbag_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/airbag.jpeg
+  
+  utter_airbag_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
 
   utter_luzes_airbag_resultado:
-  - text: Achamos que o problema pode ser o tal36! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Manutenção de Air Bag! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
+
+  utter_freio_estacionamento_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/estacionamento.png
+  
+  utter_freio_estacionamento_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
 
   utter_luzes_freio_estacionamento_resultado:
-  - text: Achamos que o problema pode ser o tal37! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Problema no Fluido de Freio! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
-  utter_luzes_3:
-  - text: Qual luz que está acessa?
+  utter_bateria_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/bateria.png
+  
+  utter_bateria_confirmacao:
+  - text: ""
     buttons:
-    - title: Luz da bateria
-      payload: Luz da bateria
-    - title: Luz de óleo do motor
-      payload: Luz de óleo do motor
-    - title: Luz revisão preventiva
-      payload: Luz revisão preventiva
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_luzes_bateria_resultado:
+  - text: Achamos que o problema pode ser Falha na bateria! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
+
+  utter_oleo_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/oleo.png
+  
+  utter_oleo_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
 
   utter_carro_com_oleo:
   - text: O carro está com nível de óleo adequado?
@@ -513,20 +576,28 @@ responses:
     - title: Não
       payload: Não
 
-  utter_luzes_bateria_resultado:
-  - text: Achamos que o problema pode ser o tal38! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
-
   utter_luzes_oleo_adequado_resultado:
-  - text: Achamos que o problema pode ser o tal39a! Clique nesse aqui [link](https://wemakecodes.com) 
-      para buscar profissionais especializados 😉🔧
+  - text: Achamos que o problema pode ser Falha no sistema de lubrificação / Sensor de pressão! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
   
   utter_luzes_oleo_nao_adequado_resultado:
-  - text: Achamos que o problema pode ser o tal39b! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Vazamento de óleo do motor! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
+  utter_revisao_imagem:
+  - text: A luz se parece com essa?
+    image: http://wemakecodes.com/assets/img/revisao.jpg
+  
+  utter_revisao_confirmacao:
+  - text: ""
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
   utter_luzes_revisao_resultado:
-  - text: Achamos que o problema pode ser o tal40! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que você precisa de uma revisão! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   #######################
@@ -550,7 +621,7 @@ responses:
       payload: Não
   
   utter_carro_nao_liga_luzes_nao_acendem_resultado:
-  - text: Achamos que o problema pode ser o tal41! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na bateria! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_trocou_combustivel:
@@ -562,7 +633,7 @@ responses:
       payload: Não
 
   utter_troca_combustivel_resultado:
-  - text: Achamos que o problema pode ser o tal42! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na injeção eletrônica! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_nao_liga_barulho:
@@ -574,11 +645,12 @@ responses:
       payload: Não
 
   utter_nao_liga_motor_normal_resultado:
-  - text: Achamos que o problema pode ser o tal43! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no sistema de Ignição / Sensor de cambota / Sensor de marcha ré! 
+      Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_nao_liga_motor_lento_resultado:
-  - text: Achamos que o problema pode ser o tal44! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na bateria! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_chave_gira:
@@ -598,14 +670,68 @@ responses:
       payload: Não
 
   utter_chave_nao_gira_reserva_funciona_resultado:
-  - text: Achamos que o problema pode ser o tal45! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha na Chave de Ignição! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
   utter_chave_nao_gira_reserva_nao_funciona_resultado:
-  - text: Achamos que o problema pode ser o tal46! Clique nesse aqui [link](https://wemakecodes.com) 
+  - text: Achamos que o problema pode ser Falha no sistema de Ignição / Bateria!
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
+
+  #######################
+  # Vibrando
+  #######################
+
+  utter_vibrando:
+  - text: Quando que o carro vibra?
+    buttons:
+    - title: Parado e em movimento
+      payload: Parado e em movimento
+    - title: Somente em movimento
+      payload: Somente em movimento
+
+  utter_vibrando_parado_movimento_resultado:
+  - text: Achamos que o problema pode ser Falha no motor! Clique nesse aqui [link](https://wemakecodes.com) 
       para buscar profissionais especializados 😉🔧
 
+  utter_somente_movimento_freio:
+  - text: O tremor acontece só quando você pisa no freio?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_vibrando_freio_resultado:
+  - text: Achamos que o problema pode ser Componentes da suspensão / Disco de freio / Cubo de roda! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
+
+  utter_vibrando_velocidades_maiores:
+  - text: Esse tremor aumenta conforme a velocidade do veiculo fica maior?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+
+  utter_vibrando_velocidades_maiores_sim_resultado:
+  - text: Achamos que o problema pode ser Alinhamento / Balanceamento / Defeito nos pneus!
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
   
+  utter_vibrando_velocidade_maiores_nao:
+  - text: Qual é mais ou menos a velocidade quando o carro vibra?
+    buttons:
+    - title: Somente devagar (até 30 km/hr)
+      payload: Somente devagar (até 30 km/hr)
+    - title: Somente rápido (acima de 90 km/h)
+      payload: Somente rápido (acima de 90 km/h)
+
+  utter_vibrando_velocidade_30_resultado:
+  - text: Achamos que o problema pode ser Falha nas Articulações e transmissão / Coxim do motor! 
+      Clique nesse aqui [link](https://wemakecodes.com) para buscar profissionais especializados 😉🔧
+  
+  utter_vibrando_velocidade_acima_30_resultado:
+  - text: Achamos que o problema pode ser Falha na suspensão! Clique nesse aqui [link](https://wemakecodes.com) 
+      para buscar profissionais especializados 😉🔧
 
   #######################
   # Outros

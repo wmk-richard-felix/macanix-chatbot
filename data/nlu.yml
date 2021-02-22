@@ -351,3 +351,36 @@ nlu:
     - Utiliza chave
     - chave
     - Chave
+
+######################
+# Vibrando
+######################
+
+- intent: vibrando
+  examples: |
+    - Meu carro está vibrando
+    - vibrando
+    - tremendo
+    - o carro está tremendo
+
+- intent: vibrando_parado_e_movimento
+  examples: |
+    - Parado e em movimento
+    - parado e movimento
+
+- intent: vibrando_somente_movimento
+  examples: |
+    - Somente em movimento
+    - em movimento
+
+- intent: vibrando_devagar
+  examples: |
+    - Somente devagar (até 30 km/hr)
+    - devagar
+    - somente devagar
+
+- intent: vibrando_rapido
+  examples: |
+    - Somente rápido (acima de 90 km/h)
+    - somente em velocidades maiores
+    - rápido
