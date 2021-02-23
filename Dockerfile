@@ -26,6 +26,7 @@ RUN python -m spacy link en_core_web_md en
 
 # Don't use root user to run code
 USER 1001
+RUN rasa train --domain domain.yml --data data --out models
 EXPOSE 5005
 
 # Start the action server
