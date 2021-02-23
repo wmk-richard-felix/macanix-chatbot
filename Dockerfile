@@ -1,49 +1,33 @@
-FROM python:3.6-slim as builder
-# if this installation process changes, the enterprise container needs to be
-# updated as well
-WORKDIR /build
-COPY . .
-RUN python setup.py sdist bdist_wheel
-RUN find dist -maxdepth 1 -mindepth 1 -name '*.tar.gz' -print0 | xargs -0 -I {} mv {} rasa.tar.gz
+# Pull SDK image as base image
+FROM rasa/rasa-sdk:2.0.0
 
-FROM python:3.6-slim
-
-SHELL ["/bin/bash", "-c"]
-
-RUN apt-get update -qq && \
-  apt-get install -y --no-install-recommends \
-  build-essential \
-  wget \
-  openssh-client \
-  graphviz-dev \
-  pkg-config \
-  git-core \
-  openssl \
-  libssl-dev \
-  libffi6 \
-  libffi-dev \
-  libpng-dev \
-  libpq-dev \
-  curl && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-  mkdir /install
-
-WORKDIR /install
-
-# Copy as early as possible so we can cache ...
-COPY requirements.txt .
-
-RUN pip install -r requirements.txt --no-cache-dir
-
-COPY --from=builder /build/rasa.tar.gz .
-RUN pip install ./rasa.tar.gz[sql]
-
-VOLUME ["/app"]
+# Use subdirectory as working directory
 WORKDIR /app
+
+# Copy actions requirements
+COPY actions/requirements-actions.txt ./
+
+# Change to root user to install dependencies
+USER root
+
+# Install extra requirements for actions code
+RUN pip install -r requirements-actions.txt
+
+# Copy actions code to working directory
+COPY ./actions /app/actions
+
+# Install modules from setup.py
+COPY setup.py /app
+RUN pip install . --no-cache-dir
+
+# Download spacy language data
+RUN python -m spacy download en_core_web_md
+RUN python -m spacy link en_core_web_md en
+
+# Don't use root user to run code
+USER 1001
 
 EXPOSE 5005
 
-ENTRYPOINT ["rasa"]
-
-CMD ["--help"]
+# Start the action server
+CMD ["start", "--actions", "actions.actions"]
