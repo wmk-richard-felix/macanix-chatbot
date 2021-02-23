@@ -30,4 +30,5 @@ EXPOSE 5005
 
 # Start the action server
 # CMD ["start", "--actions", "actions.actions"]
+ENTRYPOINT ["rasa"]
 CMD ["run", "--enable-api" ]
