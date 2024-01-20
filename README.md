@@ -1,4 +1,5 @@
 # macanix-chatbot
+..
 
 ## Treinar modelo
 rasa train
