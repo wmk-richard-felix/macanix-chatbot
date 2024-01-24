@@ -15,6 +15,7 @@ nlu:
     - boatarde
     - Ola
     - e ai
+    - fala
 
 - intent: despedida
   examples: |
